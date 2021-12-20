@@ -7,7 +7,7 @@ const Logo_Heading = () => {
             <Image
         style={logoStyles.tinyLogo}
         source={
-            require('../Components/vimient.png')
+            require('../Components/vimient.jpg')
         }
       />
         </View>
@@ -20,6 +20,7 @@ const logoStyles =StyleSheet.create({
         display: 'flex',
         alignSelf:'center',
         marginTop:70,
+        marginBottom:50
     },
   })
 
