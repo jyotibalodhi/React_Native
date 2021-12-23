@@ -1,16 +1,18 @@
 import React from 'react';
 import { View } from 'react-native';
 import Logo_Heading from './Components/Logo_Heading';
-import InputFields from './Components/InputFields'
+import Password from './Components/Password';
 import SignInButton from './Components/SignInButton';
+import EmailId from './Components/EmailId';
 
 
 const App = () => {
   return (
     <View >
       <Logo_Heading/>
-      <InputFields text={'Enter your Email Id'}/>
-      <InputFields text={'Enter your Password'}/>
+      <EmailId />
+      {/* <InputFields text={'Enter your Email Id'}/> */}
+      <Password/>
       <SignInButton/>
     </View>
   )
