@@ -11,7 +11,6 @@ const App = () => {
     <View >
       <Logo_Heading/>
       <EmailId />
-      {/* <InputFields text={'Enter your Email Id'}/> */}
       <Password/>
       <SignInButton/>
     </View>

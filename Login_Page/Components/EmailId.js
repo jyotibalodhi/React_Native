@@ -9,7 +9,6 @@ const EmailId = ()=> {
             style={fieldStyles.inputText}
             placeholder='Enter your Email id'
             placeholderTextColor="#003f5c"
-            // onChangeText={text => this.setState({email:text})}
             />
         </View>
     )
