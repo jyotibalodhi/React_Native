@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, ImageBackground, Text, StyleSheet} from 'react-native';
-import image from '../Components/Empty.png';
+import image from './Empty.png';
 
 export default function Empty() {
   return (
