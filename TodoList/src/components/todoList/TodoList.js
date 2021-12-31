@@ -3,8 +3,8 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import List from './styles';
 
-const TodoList = (props) => {
-const {item, deleteItem} = props;
+const TodoList = props => {
+  const {item, deleteItem, editItem} = props;
 
   return (
     <View style={List.ComponentContainer}>
@@ -16,11 +16,13 @@ const {item, deleteItem} = props;
             onPress={() => deleteItem(item.key)}>
             <Icon name="trash" size={25} />
           </TouchableOpacity>
+          <TouchableOpacity style={List.btn} onPress={() => editItem(item.key)}>
+            <Icon name="edit" size={20} />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
   );
-}
+};
 
 export default TodoList;
-

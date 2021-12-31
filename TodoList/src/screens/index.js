@@ -5,7 +5,7 @@ import Empty from '../components/emptyComponent/Empty';
 import TodoList from '../components/todoList/TodoList';
 import StyleView from './styles';
 
-const Main = () =>{
+const Main = () => {
   const [data, setData] = useState([]);
 
   const deleteItem = key => {
@@ -13,6 +13,10 @@ const Main = () =>{
       return prevTodo.filter(todo => todo.key != key);
     });
   };
+
+  // const editItem = key => {
+  //
+  // };
 
   const submitHandler = value => {
     setData(prevTodo => {
@@ -34,15 +38,17 @@ const Main = () =>{
           ListEmptyComponent={() => <Empty />}
           keyExtractor={item => item.key}
           renderItem={({item}) => (
-            <TodoList item={item} deleteItem={deleteItem} />
+            <TodoList
+              item={item}
+              deleteItem={deleteItem}
+              /*editItem={editItem}*/
+            />
           )}
         />
         <InputField submitHandler={submitHandler} />
       </View>
     </View>
   );
-}
+};
 
 export default Main;
-
-

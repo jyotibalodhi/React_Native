@@ -1,11 +1,11 @@
 import React from 'react';
-import { useState } from 'react';
-import { TextInput, View, TouchableOpacity } from 'react-native';
+import {useState} from 'react';
+import {TextInput, View, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import fieldStyles from './styles';
 
-const InputField = (props) => {
-  const { submitHandler } = props;
+const InputField = props => {
+  const {submitHandler} = props;
   const [value, setValue] = useState('');
 
   const onChangeText = text => {
@@ -29,8 +29,6 @@ const InputField = (props) => {
       </TouchableOpacity>
     </View>
   );
-}
+};
 
-export default function InputField;
-
-
+export default InputField;
