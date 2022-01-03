@@ -7,27 +7,53 @@ import StyleView from './styles';
 
 const Main = () => {
   const [data, setData] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   const deleteItem = key => {
-    setData(prevTodo => {
-      return prevTodo.filter(todo => todo.key != key);
-    });
+    try {
+      setData(prevTodo => {
+        return prevTodo.filter(todo => todo.key != key);
+      });
+    } catch (error) {
+      console.log('Error in deleteItem ===>>>', error);
+    }
   };
 
-  // const editItem = key => {
-  //
-  // };
+  const editItem = (item, index) => {
+    try {
+      setInputValue(item.value);
+      setSelectedIndex(index);
+    } catch (error) {
+      console.log('Error in editItem ===>>>', error);
+    }
+  };
 
   const submitHandler = value => {
-    setData(prevTodo => {
-      return [
-        {
-          value: value,
-          key: Math.random().toString(),
-        },
-        ...prevTodo,
-      ];
-    });
+    try {
+      setData(prevTodo => {
+        return [
+          ...prevTodo,
+          {
+            value: value,
+            key: Math.random().toString(),
+          },
+        ];
+      });
+      setInputValue('');
+    } catch (error) {
+      console.log('Error in submitHandler ===>>>', error);
+    }
+  };
+
+  const editHandler = value => {
+    try {
+      data[selectedIndex].value = value;
+      setData(data);
+      setInputValue('');
+    } catch (error) {
+      console.log('Error in editHandler ===>>>', error);
+    }
   };
 
   return (
@@ -37,15 +63,19 @@ const Main = () => {
           data={data}
           ListEmptyComponent={() => <Empty />}
           keyExtractor={item => item.key}
-          renderItem={({item}) => (
+          renderItem={({item, index}) => (
             <TodoList
               item={item}
               deleteItem={deleteItem}
-              /*editItem={editItem}*/
+              editItem={() => editItem(item, index)}
             />
           )}
         />
-        <InputField submitHandler={submitHandler} />
+        <InputField
+          inputValue={inputValue}
+          submitHandler={submitHandler}
+          editHandler={editHandler}
+        />
       </View>
     </View>
   );

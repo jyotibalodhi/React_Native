@@ -1,15 +1,26 @@
 import React from 'react';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {TextInput, View, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import fieldStyles from './styles';
 
 const InputField = props => {
-  const {submitHandler} = props;
+  const {submitHandler, inputValue, editHandler} = props;
   const [value, setValue] = useState('');
 
+  useEffect(() => {
+    setValue(inputValue ?? '');
+    return () => {
+      null; //
+    };
+  }, [inputValue]);
+
   const onChangeText = text => {
-    setValue(text);
+    try {
+      setValue(text);
+    } catch (error) {
+      console.log('Error in onChangeText ===>>>', error);
+    }
   };
 
   return (
@@ -18,14 +29,22 @@ const InputField = props => {
         <TextInput
           style={fieldStyles.inputFeild}
           placeholder="Add Task..."
+          defaultValue={value}
           onChangeText={onChangeText}
+          value={value}
         />
       </View>
       <TouchableOpacity
         onPress={() => {
-          setValue(submitHandler(value));
+          inputValue
+            ? setValue(editHandler(value))
+            : setValue(submitHandler(value));
         }}>
-        <Icon style={fieldStyles.btn} name="plus-circle" size={30} />
+        <Icon
+          style={fieldStyles.btn}
+          name={inputValue ? 'pencil' : 'plus-circle'}
+          size={30}
+        />
       </TouchableOpacity>
     </View>
   );

@@ -16,7 +16,7 @@ const TodoList = props => {
             onPress={() => deleteItem(item.key)}>
             <Icon name="trash" size={25} />
           </TouchableOpacity>
-          <TouchableOpacity style={List.btn} onPress={() => editItem(item.key)}>
+          <TouchableOpacity style={List.btn} onPress={() => editItem()}>
             <Icon name="edit" size={20} />
           </TouchableOpacity>
         </View>
