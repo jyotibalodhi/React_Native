@@ -14,6 +14,7 @@
 		1411559E75079003BF5F50B1 /* libPods-NavigationPage-NavigationPageTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C450A31E57D8B5464BE92C0A /* libPods-NavigationPage-NavigationPageTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		904271E270DA4C051EAF62D2 /* libPods-NavigationPage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E034BE2D0A2438EA040DFBA /* libPods-NavigationPage.a */; };
+		D5FFC5B80E2B4CCBB0E83DB2 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 167E565F7CA5466B8BB6B588 /* Ionicons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F25D9BECC19137EED5B2EF1B /* Pods-NavigationPage-NavigationPageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavigationPage-NavigationPageTests.release.xcconfig"; path = "Target Support Files/Pods-NavigationPage-NavigationPageTests/Pods-NavigationPage-NavigationPageTests.release.xcconfig"; sourceTree = "<group>"; };
 		FC7363506BCBEC13EC92A8B2 /* Pods-NavigationPage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavigationPage.release.xcconfig"; path = "Target Support Files/Pods-NavigationPage/Pods-NavigationPage.release.xcconfig"; sourceTree = "<group>"; };
+		167E565F7CA5466B8BB6B588 /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-ionicons/fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				46005257F910863DA589872D /* Pods */,
+				D72F25F7CF704D058C565D03 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -148,6 +151,15 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		D72F25F7CF704D058C565D03 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				167E565F7CA5466B8BB6B588 /* Ionicons.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -245,6 +257,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D5FFC5B80E2B4CCBB0E83DB2 /* Ionicons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
