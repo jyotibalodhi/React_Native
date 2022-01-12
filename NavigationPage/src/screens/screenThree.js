@@ -15,7 +15,7 @@ const screenThree = ({navigation}) => {
           fontWeight: 'bold',
           fontSize: 20,
         }}>
-        Screen Three
+        Feed Page
       </Text>
     </View>
   );

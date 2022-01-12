@@ -15,7 +15,7 @@ const screenFour = ({navigation}) => {
           fontWeight: 'bold',
           fontSize: 20,
         }}>
-        Screen Four
+        Settings Page
       </Text>
     </View>
   );

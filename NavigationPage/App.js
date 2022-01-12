@@ -1,13 +1,67 @@
-import React from 'react';
+import * as React from 'react';
+
 import {NavigationContainer} from '@react-navigation/native';
-import {View, Text} from 'react-native';
-// import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-ionicons';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+
 import screenOne from './src/screens/screenOne';
 import screenTwo from './src/screens/screenTwo';
 import screenThree from './src/screens/screenThree';
 import screenFour from './src/screens/screenFour';
+import screenFive from './src/screens/screenFive';
+import screenSix from './src/screens/screenSix';
+
+const Drawer = createDrawerNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator
+        screenOptions={{
+          activeTintColor: '#e91e63',
+          itemStyle: {marginVertical: 5},
+        }}>
+        <Drawer.Screen
+          name="Home"
+          options={{drawerLabel: 'Home Screen'}}
+          component={screenOne}
+        />
+        <Drawer.Screen
+          name="Article"
+          options={{drawerLabel: 'Article'}}
+          component={screenTwo}
+        />
+        <Drawer.Screen
+          name="Feed"
+          options={{drawerLabel: 'Feed'}}
+          component={screenThree}
+        />
+        <Drawer.Screen
+          name="Settings"
+          options={{drawerLabel: 'Settings'}}
+          component={screenFour}
+        />
+        <Drawer.Screen
+          name="Contact"
+          options={{drawerLabel: 'Contact'}}
+          component={screenFive}
+        />
+
+        <Drawer.Screen
+          name="Help"
+          options={{drawerLabel: 'Get Help'}}
+          component={screenSix}
+        />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
+
+/*
+
+----------Tab Navigation---------
+
 
 const Tab = createBottomTabNavigator();
 
@@ -46,3 +100,4 @@ function App() {
 }
 
 export default App;
+*/

@@ -12,6 +12,8 @@ target 'NavigationPage' do
     :hermes_enabled => false
   )
 
+  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+
   target 'NavigationPageTests' do
     inherit! :complete
     # Pods for testing

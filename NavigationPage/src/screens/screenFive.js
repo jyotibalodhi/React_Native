@@ -1,25 +1,24 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-const screenTwo = ({navigation}) => {
+const screenFive = ({navigation}) => {
   return (
     <View
       style={{
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'green',
+        backgroundColor: 'yellow',
       }}>
       <Text
         style={{
-          color: 'white',
           fontWeight: 'bold',
           fontSize: 20,
         }}>
-        Article Page
+        Contact Page
       </Text>
     </View>
   );
 };
 
-export default screenTwo;
+export default screenFive;
