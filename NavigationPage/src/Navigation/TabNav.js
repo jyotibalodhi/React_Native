@@ -4,8 +4,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import Ionicons from 'react-native-ionicons';
 import {MainStackNavigator, FeedStackNavigator} from './StackNav';
-import MainDrawerNavigator from './DrawerNav';
-
+import {HelpStackNavigator} from './StackNav';
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 
@@ -30,13 +29,13 @@ const BottomTabNavigator = () => {
         },
         tabBarActiveTintColor: 'tomato',
         tabBarInactiveTintColor: 'gray',
-        headerShown: false,
+        headerShown: true,
         headerTintColor: 'white',
         headerBackTitle: 'Back',
       })}>
       <Tab.Screen name="Home" component={MainStackNavigator} />
       <Tab.Screen name="Feed" component={FeedStackNavigator} />
-      <Tab.Screen name="Help" component={MainDrawerNavigator} />
+      <Tab.Screen name="Help" component={HelpStackNavigator} />
     </Tab.Navigator>
   );
 };
