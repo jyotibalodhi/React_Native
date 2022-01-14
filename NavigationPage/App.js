@@ -1,14 +1,24 @@
 import * as React from 'react';
-
 import {NavigationContainer} from '@react-navigation/native';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import TabNav from './src/Navigation/TabNav';
 
-import screenOne from './src/screens/screenOne';
-import screenTwo from './src/screens/screenTwo';
-import screenThree from './src/screens/screenThree';
-import screenFour from './src/screens/screenFour';
-import screenFive from './src/screens/screenFive';
-import screenSix from './src/screens/screenSix';
+function App() {
+  return (
+    <NavigationContainer>
+      <TabNav />
+    </NavigationContainer>
+  );
+}
+
+export default App;
+
+/*
+
+
+
+
+
+----------Drawer Navigation---------
 
 const Drawer = createDrawerNavigator();
 
@@ -56,8 +66,7 @@ function App() {
   );
 }
 
-export default App;
-
+export default App; */
 /*
 
 ----------Tab Navigation---------

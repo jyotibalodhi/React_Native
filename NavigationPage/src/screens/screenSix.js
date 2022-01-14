@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
 
 const screenSix = ({navigation}) => {
   return (
@@ -15,8 +15,12 @@ const screenSix = ({navigation}) => {
           fontWeight: 'bold',
           fontSize: 20,
         }}>
-        Help Page
+        Settings Page
       </Text>
+      <Button
+        title="Go to Home Page"
+        onPress={() => navigation.navigate('Home')}
+      />
     </View>
   );
 };

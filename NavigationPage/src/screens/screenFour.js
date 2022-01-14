@@ -15,7 +15,7 @@ const screenFour = ({navigation}) => {
           fontWeight: 'bold',
           fontSize: 20,
         }}>
-        Settings Page
+        Help Page
       </Text>
     </View>
   );

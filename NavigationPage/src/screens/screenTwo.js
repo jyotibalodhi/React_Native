@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
 
-const screenTwo = ({navigation}) => {
+const screenTwo = () => {
   return (
     <View
       style={{
@@ -15,6 +15,7 @@ const screenTwo = ({navigation}) => {
           color: 'white',
           fontWeight: 'bold',
           fontSize: 20,
+          margin: 10,
         }}>
         Article Page
       </Text>

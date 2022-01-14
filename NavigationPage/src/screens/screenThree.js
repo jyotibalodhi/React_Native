@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
 
 const screenThree = ({navigation}) => {
   return (
@@ -17,6 +17,10 @@ const screenThree = ({navigation}) => {
         }}>
         Feed Page
       </Text>
+      <Button
+        title="Go to Home Page"
+        onPress={() => navigation.navigate('Home')}
+      />
     </View>
   );
 };
