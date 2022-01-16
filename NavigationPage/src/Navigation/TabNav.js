@@ -1,12 +1,10 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import Ionicons from 'react-native-ionicons';
 import {MainStackNavigator, FeedStackNavigator} from './StackNav';
 import {HelpStackNavigator} from './StackNav';
 const Tab = createBottomTabNavigator();
-const Drawer = createDrawerNavigator();
 
 const BottomTabNavigator = () => {
   return (
@@ -28,8 +26,8 @@ const BottomTabNavigator = () => {
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: 'tomato',
-        tabBarInactiveTintColor: 'gray',
-        headerShown: true,
+        tabBarInactiveTiǹtColor: 'gray',
+        headerShown: false,
         headerTintColor: 'white',
         headerBackTitle: 'Back',
       })}>
