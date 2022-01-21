@@ -5,7 +5,7 @@ import Empty from '../components/emptyComponent/Empty';
 import TodoList from '../components/todoList/TodoList';
 import StyleView from './styles';
 import {useDispatch, useSelector} from 'react-redux';
-import {addTodo, deleteTodo, editTodo} from '../redux/actions/actions';
+import {addTodo, deleteTodo, editTodo, startFetchAction} from '../redux/actions/actions';
 
 const Main = () => {
   const dispatch = useDispatch();
@@ -15,12 +15,22 @@ const Main = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   useEffect(() => {
+    // console.log(res, ' In the main page..');
     setData(list);
     console.log(list);
     return () => {
       null;
     };
   }, [list]);
+
+  useEffect(() => {
+    dispatch(startFetchAction());
+  
+    return () => {
+      null;
+    };
+  }, []);
+  
 
   const deleteItem = id => {
     try {

@@ -1,14 +1,26 @@
+import axios from 'axios';
+
 const initialData = {
   list: [],
+  loading: false,
 };
 
 const todoReducers = (state = initialData, action) => {
   console.log('type', action.type);
 
   switch (action.type) {
+    case 'START_FETCH':
+      return {...state, loading: true};
+
     case 'ADD_TODO':
       const data = action.payload;
-      const newList = [...state.list, data];
+      console.log('data', data);
+      let newList = [];
+      if (Array.isArray(data)) {
+        newList = [...state.list, ...data];
+      } else {
+        newList = [...state.list, data];
+      }
       return {...state, list: newList};
 
     case 'DELETE_TODO':
@@ -26,11 +38,11 @@ const todoReducers = (state = initialData, action) => {
       const tempList = state.list;
       tempList[index].value = value;
       // console.log(tempList, 'TempList....');
-
       return {
         ...state,
         list: tempList,
       };
+
     default:
       return state;
   }

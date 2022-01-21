@@ -1,7 +1,12 @@
-import takeEvery from 'redux-saga';
-import {addTodoSaga} from './todosaga';
+import {takeLatest, takeEvery} from 'redux-saga/effects';
+import {startFetchSaga} from './fetchSaga';
 function* rootSaga() {
-  yield takeEvery('ADD_TODO', addTodoSaga);
+  try {
+    // yield takeEvery('START_FETCH', startFetchSaga);
+    yield takeEvery('START_FETCH', startFetchSaga);
+  } catch (error) {
+    console.log('error', error);
+  }
 }
 
 export default rootSaga;
