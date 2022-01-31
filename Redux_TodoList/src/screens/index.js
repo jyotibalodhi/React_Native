@@ -5,40 +5,35 @@ import Empty from '../components/emptyComponent/Empty';
 import TodoList from '../components/todoList/TodoList';
 import StyleView from './styles';
 import {useDispatch, useSelector} from 'react-redux';
-import {addTodo, deleteTodo, editTodo, startFetchAction} from '../redux/actions/actions';
-
+import {
+  addTodo,
+  deleteTodo,
+  editTodo,
+  startFetchAction,
+} from '../redux/actions/actions';
+import {getData, storeData} from '../localstorage';
 const Main = () => {
   const dispatch = useDispatch();
   const list = useSelector(state => state.todoReducers.list);
-  const [data, setData] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   useEffect(() => {
-    // console.log(res, ' In the main page..');
-    setData(list);
-    console.log(list);
-    return () => {
-      null;
-    };
-  }, [list]);
+    getData('list').then(res => {
+      if (!res.length) dispatch(startFetchAction());
+      else dispatch(addTodo(res));
+      console.log(res, 'Res list');
+      storeData('list', res);
+    });
 
-  useEffect(() => {
-    dispatch(startFetchAction());
-  
     return () => {
       null;
     };
   }, []);
-  
 
   const deleteItem = id => {
     try {
       dispatch(deleteTodo({key: id}));
-      // setData(prevTodo => {
-      //   return prevTodo.filter(todo => todo.id != id);
-      // console.log(list, 'Upd list');
-      // });
     } catch (error) {
       console.log('Error in deleteItem ===>>>', error);
     }
@@ -62,17 +57,6 @@ const Main = () => {
         }),
       );
       setInputValue('');
-      // console.log(list);
-
-      // setData(prevTodo => {
-      //   return [
-      //     ...prevTodo,
-      // {
-      //   value: value,
-      //   key: Math.random().toString(),
-      // },
-      //   ];
-      // });
     } catch (error) {
       console.log('Error in submitHandler ===>>>', error);
     }
@@ -80,17 +64,12 @@ const Main = () => {
 
   const editHandler = value => {
     try {
-      console.log('Inside edit handler\n\n');
-      console.log(value, ' Value...\n\n');
-      // data[selectedIndex].value = value;
       dispatch(
         editTodo({
           value: value,
           index: selectedIndex,
         }),
       );
-      // console.log(data, ' Data...');
-      // setData(data);
       setInputValue('');
     } catch (error) {
       console.log('Error in editHandler ===>>>', error);
@@ -101,7 +80,7 @@ const Main = () => {
     <View style={StyleView.main}>
       <View>
         <FlatList
-          data={data}
+          data={list}
           ListEmptyComponent={() => <Empty />}
           keyExtractor={item => item.key}
           renderItem={({item, index}) => (

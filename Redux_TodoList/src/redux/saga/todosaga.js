@@ -4,6 +4,7 @@ function* addTodoSaga(action) {
   try {
     const resTodo = yield call(startFetchFun());
     console.log(resTodo, 'API CALL....');
+
     yield put(
       addTodo({
         value: resTodo,

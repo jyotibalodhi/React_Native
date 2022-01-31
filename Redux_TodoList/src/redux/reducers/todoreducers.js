@@ -1,4 +1,4 @@
-import axios from 'axios';
+import {storeData} from '../../localstorage';
 
 const initialData = {
   list: [],
@@ -14,20 +14,22 @@ const todoReducers = (state = initialData, action) => {
 
     case 'ADD_TODO':
       const data = action.payload;
-      console.log('data', data);
-      let newList = [];
+      // console.log('data', data);
+      let newList;
       if (Array.isArray(data)) {
         newList = [...state.list, ...data];
       } else {
         newList = [...state.list, data];
       }
+      storeData('list', newList);
+
       return {...state, list: newList};
 
     case 'DELETE_TODO':
-      // console.log(action.key, 'Action key \n');
       const {key} = action.key;
-      // console.log(key, ' Key Value');
       const updList = state.list.filter(todo => todo.key != key);
+      storeData('list', updList);
+      // console.log(updList, 'Upd List');
       return {
         ...state,
         list: updList,
@@ -37,6 +39,7 @@ const todoReducers = (state = initialData, action) => {
       const {value, index} = action.payload;
       const tempList = state.list;
       tempList[index].value = value;
+      storeData('list', tempList);
       // console.log(tempList, 'TempList....');
       return {
         ...state,

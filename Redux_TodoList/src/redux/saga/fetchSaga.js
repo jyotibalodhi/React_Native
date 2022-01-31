@@ -1,10 +1,10 @@
 import {call, put} from 'redux-saga/effects';
+import {storeData} from '../../localstorage';
 import {addTodo} from '../actions/actions';
 import {startFetchFun} from '../apicalls.js/fetch';
 
 function* startFetchSaga(action) {
   try {
-    console.log('here');
     const resTodo = yield call(startFetchFun);
     yield put(addTodo(resTodo));
   } catch (error) {

@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const addTodo = data => {
   return {
     type: 'ADD_TODO',
