@@ -29,7 +29,7 @@ const BottomTabNavigator = () => {
         tabBarInactiveTiǹtColor: 'gray',
         headerShown: false,
         headerTintColor: 'white',
-        headerBackTitle: 'Back',
+        headerBackTitle: 'Black',
       })}>
       <Tab.Screen name="Home" component={MainStackNavigator} />
       <Tab.Screen name="Feed" component={FeedStackNavigator} />
