@@ -23,7 +23,7 @@ export default function TabNav() {
           } else if (route.name === 'Search') {
             iconName = focused ? 'search' : 'search-outline';
           } else if (route.name === 'Post') {
-            iconName = focused ? 'chatbubble' : 'chatbubble-outline';
+            iconName = focused ? 'add-circle' : 'add-circle-outline';
           } else if (route.name === 'Friends') {
             iconName = focused ? 'people' : 'people-outline';
           } else if (route.name === 'Profile') {
@@ -32,7 +32,7 @@ export default function TabNav() {
 
           return <Icon name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: 'tomato',
+        tabBarActiveTintColor: 'black',
         tabBarInactiveTiǹtColor: 'gray',
         headerTitleAlign: 'center',
       })}>
@@ -47,7 +47,11 @@ export default function TabNav() {
           ),
           headerRight: () => (
             <TouchableOpacity>
-              <Icon name="create-outline" size={25} style={{marginRight: 15}} />
+              <Icon
+                name="paper-plane-outline"
+                size={25}
+                style={{marginRight: 15}}
+              />
             </TouchableOpacity>
           ),
         }}

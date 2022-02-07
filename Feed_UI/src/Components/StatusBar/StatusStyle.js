@@ -1,26 +1,22 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  StatusBar: {
-    padding: 10,
+  StatusItem: {
+    width: 68,
+    height: 68,
     backgroundColor: 'white',
-    borderTopWidth: 0.5,
-    borderTopColor: 'black',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-  },
-
-  StatusItems: {
-    flexDirection: 'column',
+    borderRadius: 100,
+    borderWidth: 2,
+    margin: 3,
+    borderColor: '#c13584',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   Avatar: {
-    width: 50,
-    height: 50,
-    borderRadius: 50,
-    borderColor: 'green',
-    borderWidth: 3,
+    width: '92%',
+    height: '92%',
+    borderRadius: 100,
+    resizeMode: 'cover',
     marginHorizontal: 10,
   },
 });

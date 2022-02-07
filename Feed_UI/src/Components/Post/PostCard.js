@@ -3,14 +3,13 @@ import React from 'react';
 import {View, Image} from 'react-native';
 import {Text, Card} from 'react-native-elements';
 import styles from './CardStyle';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/Ionicons';
 import LikeBtn from '../Buttons/LikeBtn';
 import CommentBtn from '../Buttons/CommentBtn';
-
 const PostCard = ({name, place, text, image, avatar}) => {
   return (
     <View>
-      <Card>
+      <Card style={styles.Post}>
         <View style={styles.CardTitle}>
           <View style={styles.Profile}>
             <Image style={styles.Avatar} source={{uri: avatar}}></Image>
@@ -19,7 +18,7 @@ const PostCard = ({name, place, text, image, avatar}) => {
 
           <Text style={styles.Place}>{place}</Text>
           <TouchableOpacity>
-            <Icon name="ellipsis-h" size={20} />
+            <Icon name="ellipsis-vertical-outline" size={20} />
           </TouchableOpacity>
         </View>
 

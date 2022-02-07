@@ -1,6 +1,10 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
+  Post: {
+    width: '100%',
+    margin: 0,
+  },
   CardTitle: {
     padding: 10,
     flexDirection: 'row',
